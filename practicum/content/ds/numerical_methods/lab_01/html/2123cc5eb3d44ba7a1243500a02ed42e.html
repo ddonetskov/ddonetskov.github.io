@@ -1,0 +1,86 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.3.3.min.js" integrity="sha384-dM3QQsP+wXdHg42wTqW85BjZQdLNNIXqlPw/BgKoExPmTG7ZLML4EGqLMfqHT6ON" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.3.3.min.js" integrity="sha384-3QTqdz9LyAm2i0sG5XTePsHec3UHWwVsrOL68SYRoAXsafvfAyqtQ+h440+qIBhS" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="212550fe-cbc5-42e0-9da2-b16448bef9b4" data-root-id="1301"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="1302">
+          {"050f316f-c558-47e9-8883-2f3885398c9b":{"defs":[],"roots":{"references":[{"attributes":{"labels":["No.","Yes."],"width":150},"id":"1296","type":"RadioGroup"},{"attributes":{"height":100,"width":600},"id":"1294","type":"Div"},{"attributes":{"children":[{"id":"1293"},{"id":"1296"}],"width":600},"id":"1300","type":"Row"},{"attributes":{"button_type":"success","icon":null,"js_event_callbacks":{"button_click":[{"id":"1298"}]},"label":"Check","width":600},"id":"1295","type":"Button"},{"attributes":{"height":100,"text":"Does changing the hyperparameters lead to different values of the metric?","width":200},"id":"1293","type":"Div"},{"attributes":{"children":[{"id":"1300"},{"id":"1295"},{"id":"1294"}]},"id":"1301","type":"Column"},{"attributes":{"args":{"bad":null,"correct":1,"good":"A baseline model can be built without spending too much time on tuning hyperparameters. It is much more important to have a clean dataset.","okay":null,"radio":{"id":"1296"},"response":{"id":"1294"}},"code":"              \n            var radio = radio;\n            var text = response;\n            var correct = correct;\n            var good = good;\n\n            if (radio.active == correct) {\n                text.text = good\n            } else {\n                text.text = \"That's not right. Think about it a little more.\"\n            }\n            "},"id":"1298","type":"CustomJS"}],"root_ids":["1301"]},"title":"Bokeh Application","version":"2.3.3"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('1302').textContent;
+                  var render_items = [{"docid":"050f316f-c558-47e9-8883-2f3885398c9b","root_ids":["1301"],"roots":{"1301":"212550fe-cbc5-42e0-9da2-b16448bef9b4"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

@@ -1,0 +1,86 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.3.3.min.js" integrity="sha384-dM3QQsP+wXdHg42wTqW85BjZQdLNNIXqlPw/BgKoExPmTG7ZLML4EGqLMfqHT6ON" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.3.3.min.js" integrity="sha384-3QTqdz9LyAm2i0sG5XTePsHec3UHWwVsrOL68SYRoAXsafvfAyqtQ+h440+qIBhS" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="f17d086c-0f29-4076-88bc-871b54b36554" data-root-id="1251"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="1252">
+          {"302b1298-cd17-4dd5-8bd3-05cf9ccfeeb2":{"defs":[],"roots":{"references":[{"attributes":{"labels":["The kernel needs to be restarted each time.","The random seed needs to be fixed."],"width":150},"id":"1246","type":"RadioGroup"},{"attributes":{"height":100,"text":"Notice that the SGD regressor returns different results each time. How can we fix it if we'd like to?","width":200},"id":"1243","type":"Div"},{"attributes":{"height":100,"width":600},"id":"1244","type":"Div"},{"attributes":{"args":{"bad":null,"correct":1,"good":"Most of gradient descent methods have got an initialization phase which is based on randomness. Fixing the random seed makes results of the initial phase and all subsequent ones constant, determenistic. This renders very useful when we'd like to reproduce results e.g. to let others run our code in a different environment themselves and still get the same result (granting same versions of libraries are used).","okay":null,"radio":{"id":"1246"},"response":{"id":"1244"}},"code":"              \n            var radio = radio;\n            var text = response;\n            var correct = correct;\n            var good = good;\n\n            if (radio.active == correct) {\n                text.text = good\n            } else {\n                text.text = \"That's not right. Think about it a little more.\"\n            }\n            "},"id":"1248","type":"CustomJS"},{"attributes":{"button_type":"success","icon":null,"js_event_callbacks":{"button_click":[{"id":"1248"}]},"label":"Check","width":600},"id":"1245","type":"Button"},{"attributes":{"children":[{"id":"1243"},{"id":"1246"}],"width":600},"id":"1250","type":"Row"},{"attributes":{"children":[{"id":"1250"},{"id":"1245"},{"id":"1244"}]},"id":"1251","type":"Column"}],"root_ids":["1251"]},"title":"Bokeh Application","version":"2.3.3"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('1252').textContent;
+                  var render_items = [{"docid":"302b1298-cd17-4dd5-8bd3-05cf9ccfeeb2","root_ids":["1251"],"roots":{"1251":"f17d086c-0f29-4076-88bc-871b54b36554"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

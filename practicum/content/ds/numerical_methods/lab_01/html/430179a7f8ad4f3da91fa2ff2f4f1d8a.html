@@ -1,0 +1,86 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.3.3.min.js" integrity="sha384-dM3QQsP+wXdHg42wTqW85BjZQdLNNIXqlPw/BgKoExPmTG7ZLML4EGqLMfqHT6ON" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.3.3.min.js" integrity="sha384-3QTqdz9LyAm2i0sG5XTePsHec3UHWwVsrOL68SYRoAXsafvfAyqtQ+h440+qIBhS" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="82f8cd36-d64a-447f-9bf7-fc8123c871ce" data-root-id="1171"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="1172">
+          {"db588520-815b-49b7-8d18-0cabf9c109f5":{"defs":[],"roots":{"references":[{"attributes":{"args":{"bad":null,"correct":2,"good":"Yes, there are two minumums at approximately x=-3.5 and x=2.5. In general, a function can take many extreme values. In the ML optimization tasks, we are usually interested in only one, a global minimum.","okay":null,"radio":{"id":"1166"},"response":{"id":"1164"}},"code":"              \n            var radio = radio;\n            var text = response;\n            var correct = correct;\n            var good = good;\n\n            if (radio.active == correct) {\n                text.text = good\n            } else {\n                text.text = \"That's not right. Think about it a little more.\"\n            }\n            "},"id":"1168","type":"CustomJS"},{"attributes":{"height":100,"text":"How many minimums are there in the interval [-5, 4]?","width":200},"id":"1163","type":"Div"},{"attributes":{"height":100,"width":600},"id":"1164","type":"Div"},{"attributes":{"children":[{"id":"1163"},{"id":"1166"}],"width":600},"id":"1170","type":"Row"},{"attributes":{"button_type":"success","icon":null,"js_event_callbacks":{"button_click":[{"id":"1168"}]},"label":"Check","width":600},"id":"1165","type":"Button"},{"attributes":{"children":[{"id":"1170"},{"id":"1165"},{"id":"1164"}]},"id":"1171","type":"Column"},{"attributes":{"labels":["0","1","2"],"width":150},"id":"1166","type":"RadioGroup"}],"root_ids":["1171"]},"title":"Bokeh Application","version":"2.3.3"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('1172').textContent;
+                  var render_items = [{"docid":"db588520-815b-49b7-8d18-0cabf9c109f5","root_ids":["1171"],"roots":{"1171":"82f8cd36-d64a-447f-9bf7-fc8123c871ce"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

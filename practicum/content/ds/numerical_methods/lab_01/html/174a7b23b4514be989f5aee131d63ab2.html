@@ -1,0 +1,86 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.3.3.min.js" integrity="sha384-dM3QQsP+wXdHg42wTqW85BjZQdLNNIXqlPw/BgKoExPmTG7ZLML4EGqLMfqHT6ON" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.3.3.min.js" integrity="sha384-3QTqdz9LyAm2i0sG5XTePsHec3UHWwVsrOL68SYRoAXsafvfAyqtQ+h440+qIBhS" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="c32dcf34-1fe9-4a2a-a571-8cef665fd480" data-root-id="1261"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="1262">
+          {"f5558667-4402-4ba4-9609-5daa78d48778":{"defs":[],"roots":{"references":[{"attributes":{"labels":["RMSE","MAE"],"width":150},"id":"1256","type":"RadioGroup"},{"attributes":{"height":100,"text":"Which metric is more affected by removing the extreme values from the dataset?","width":200},"id":"1253","type":"Div"},{"attributes":{"height":100,"width":600},"id":"1254","type":"Div"},{"attributes":{"children":[{"id":"1260"},{"id":"1255"},{"id":"1254"}]},"id":"1261","type":"Column"},{"attributes":{"args":{"bad":null,"correct":0,"good":"RMSE has descreased by 3% and MAE has decreased by 2% (for top_k=10). The difference is not large but it can be much larger for a dataset with more extreme outliers for predicted values.","okay":null,"radio":{"id":"1256"},"response":{"id":"1254"}},"code":"              \n            var radio = radio;\n            var text = response;\n            var correct = correct;\n            var good = good;\n\n            if (radio.active == correct) {\n                text.text = good\n            } else {\n                text.text = \"That's not right. Think about it a little more.\"\n            }\n            "},"id":"1258","type":"CustomJS"},{"attributes":{"children":[{"id":"1253"},{"id":"1256"}],"width":600},"id":"1260","type":"Row"},{"attributes":{"button_type":"success","icon":null,"js_event_callbacks":{"button_click":[{"id":"1258"}]},"label":"Check","width":600},"id":"1255","type":"Button"}],"root_ids":["1261"]},"title":"Bokeh Application","version":"2.3.3"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('1262').textContent;
+                  var render_items = [{"docid":"f5558667-4402-4ba4-9609-5daa78d48778","root_ids":["1261"],"roots":{"1261":"c32dcf34-1fe9-4a2a-a571-8cef665fd480"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

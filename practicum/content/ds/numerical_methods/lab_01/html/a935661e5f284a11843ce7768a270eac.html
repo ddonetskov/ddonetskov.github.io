@@ -1,0 +1,86 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.3.3.min.js" integrity="sha384-dM3QQsP+wXdHg42wTqW85BjZQdLNNIXqlPw/BgKoExPmTG7ZLML4EGqLMfqHT6ON" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.3.3.min.js" integrity="sha384-3QTqdz9LyAm2i0sG5XTePsHec3UHWwVsrOL68SYRoAXsafvfAyqtQ+h440+qIBhS" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="aed58a80-828e-497e-a34a-8142756266c2" data-root-id="1231"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="1232">
+          {"c047d273-8766-4833-81a5-106414d0d2e9":{"defs":[],"roots":{"references":[{"attributes":{"children":[{"id":"1230"},{"id":"1225"},{"id":"1224"}]},"id":"1231","type":"Column"},{"attributes":{"args":{"bad":null,"correct":2,"good":"The feature normalization geometrically can be thought of as converting narraw clefts that are difficult to locate so to start descending into to all those round valleys pleasant to descend into.","okay":null,"radio":{"id":"1226"},"response":{"id":"1224"}},"code":"              \n            var radio = radio;\n            var text = response;\n            var correct = correct;\n            var good = good;\n\n            if (radio.active == correct) {\n                text.text = good\n            } else {\n                text.text = \"That's not right. Think about it a little more.\"\n            }\n            "},"id":"1228","type":"CustomJS"},{"attributes":{"button_type":"success","icon":null,"js_event_callbacks":{"button_click":[{"id":"1228"}]},"label":"Check","width":600},"id":"1225","type":"Button"},{"attributes":{"labels":["A smaller step size is required.","A larger step is required.","The dataset is not suitable for this type of regressor."],"width":150},"id":"1226","type":"RadioGroup"},{"attributes":{"height":100,"width":600},"id":"1224","type":"Div"},{"attributes":{"height":100,"text":"The SGD regressor returns resuls far from the optimal one (as returned by the Linear Regressor)? How can it be fixed?","width":200},"id":"1223","type":"Div"},{"attributes":{"children":[{"id":"1223"},{"id":"1226"}],"width":600},"id":"1230","type":"Row"}],"root_ids":["1231"]},"title":"Bokeh Application","version":"2.3.3"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('1232').textContent;
+                  var render_items = [{"docid":"c047d273-8766-4833-81a5-106414d0d2e9","root_ids":["1231"],"roots":{"1231":"aed58a80-828e-497e-a34a-8142756266c2"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

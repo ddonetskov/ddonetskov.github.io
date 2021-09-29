@@ -1,0 +1,86 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.3.3.min.js" integrity="sha384-dM3QQsP+wXdHg42wTqW85BjZQdLNNIXqlPw/BgKoExPmTG7ZLML4EGqLMfqHT6ON" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.3.3.min.js" integrity="sha384-3QTqdz9LyAm2i0sG5XTePsHec3UHWwVsrOL68SYRoAXsafvfAyqtQ+h440+qIBhS" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="17378241-2d78-4bd4-a84e-6843df996fd7" data-root-id="1221"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="1222">
+          {"2c49a66f-5be8-4283-9568-8d17030624b4":{"defs":[],"roots":{"references":[{"attributes":{"children":[{"id":"1213"},{"id":"1216"}],"width":600},"id":"1220","type":"Row"},{"attributes":{"height":100,"width":600},"id":"1214","type":"Div"},{"attributes":{"button_type":"success","icon":null,"js_event_callbacks":{"button_click":[{"id":"1218"}]},"label":"Check","width":600},"id":"1215","type":"Button"},{"attributes":{"height":100,"text":"Do the starting point or the step size matter in finding a solution faster?","width":200},"id":"1213","type":"Div"},{"attributes":{"children":[{"id":"1220"},{"id":"1215"},{"id":"1214"}]},"id":"1221","type":"Column"},{"attributes":{"labels":["Only the starting point does.","Both do."],"width":150},"id":"1216","type":"RadioGroup"},{"attributes":{"args":{"bad":null,"correct":1,"good":"Gradient descent geometrically can be thought of as taking subsequent steps in chosen directions. Larger steps helps to arrive to a solution quicker, smaller one helps to arrive to it more precisely. Modern algorithms usually adjust the step size depending on an indication whether a solution is still far or is already near to balance between these two goals.","okay":null,"radio":{"id":"1216"},"response":{"id":"1214"}},"code":"              \n            var radio = radio;\n            var text = response;\n            var correct = correct;\n            var good = good;\n\n            if (radio.active == correct) {\n                text.text = good\n            } else {\n                text.text = \"That's not right. Think about it a little more.\"\n            }\n            "},"id":"1218","type":"CustomJS"}],"root_ids":["1221"]},"title":"Bokeh Application","version":"2.3.3"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('1222').textContent;
+                  var render_items = [{"docid":"2c49a66f-5be8-4283-9568-8d17030624b4","root_ids":["1221"],"roots":{"1221":"17378241-2d78-4bd4-a84e-6843df996fd7"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>
